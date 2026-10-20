@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10372b">
+<meta name="description" content="AKGS Kalari Sangam student admission and registration">
+<title>AKGS Kalari Sangam | Admissions</title>
+
+<style>
+:root {
+  --green: #10372b;
+  --green-light: #20533e;
+  --gold: #d9ad58;
+  --cream: #f7f5ed;
+  --text: #26352e;
+  --muted: #6b786f;
+  --border: #dfe5dc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+}
+.hero {
+  text-align: center;
+  color: white;
+  padding: 42px 18px 48px;
+  background:
+    radial-gradient(circle at 85% 10%, #477854 0, transparent 35%),
+    linear-gradient(135deg, #091f18, var(--green-light));
+  border-bottom: 5px solid var(--gold);
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+.brand {
+  font-size: clamp(25px, 5vw, 40px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+  margin: 0;
+}
+.hero p { color: #e1e9df; margin: 12px 0; }
+.tagline {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.container {
+  width: min(940px, 94%);
+  margin: 32px auto;
+}
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 45px #193a2b10;
+}
+.card-header {
+  padding: 28px clamp(18px, 4vw, 40px);
+  border-bottom: 1px solid var(--border);
+}
+.card-header h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: 27px;
+}
+.card-header p {
+  color: var(--muted);
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
+.section { margin-top: 30px; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8e6dc;
+}
+.number {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--green);
+  color: var(--gold);
+  font-weight: 800;
+}
+.section-title h3 {
+  color: var(--green);
+  margin: 0;
+  font-size: 17px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.full { grid-column: 1 / -1; }
+label {
+  font-size: 13px;
+  font-weight: 700;
+}
+.required { color: #b32626; }
+input, select, textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #d8dfd7;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+input[type="file"] {
+  padding: 10px;
+  background: #fbfcf9;
+}
+textarea { min-height: 100px; resize: vertical; }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--green-light);
+  box-shadow: 0 0 0 3px #20533e18;
+}
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+.privacy {
+  padding: 16px;
+  border: 1px solid #e9dfc6;
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  background: #fffbf1;
+  color: #655630;
+  font-size: 13px;
+}
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 25px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.consent input {
+  width: 17px;
+  min-height: 17px;
+  margin-top: 4px;
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+.submit {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: var(--green);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.submit:hover { background: var(--green-light); }
+.form-note {
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  margin-top: 13px;
+}
+footer {
+  padding: 24px 15px 34px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+footer strong { color: var(--green); }
+[hidden] { display: none !important; }
+@media (max-width: 620px) {
+  .hero { padding: 32px 16px 38px; }
+  .logo { width: 82px; height: 82px; }
+  .grid { grid-template-columns: 1fr; gap: 16px; }
+  .full { grid-column: auto; }
+  .container { margin: 20px auto; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <img src="logo.png" class="logo" alt="AKGS Kalari Sangam Logo"
+       onerror="this.style.display='none'">
+  <h1 class="brand">AKGS KALARI SANGAM</h1>
+  <p>Official Student Admission & Registration</p>
+  <div class="tagline">DISCIPLINE · STRENGTH · TRADITION</div>
+</header>
+
+<main class="container">
+<div class="card">
+
+  <div class="card-header">
+    <h2>Admission Application</h2>
+    <p>Fill in the form carefully to apply for admission.</p>
+    <p><span class="required">*</span> Required fields</p>
+  </div>
+
+  <form id="admissionForm"
+        action="https://formsubmit.co/akgskalarisangam@gmail.com"
+        method="POST"
+        enctype="multipart/form-data">
+
+    <input type="hidden" name="_subject"
+           value="New Admission - AKGS Kalari Sangam">
+    <input type="hidden" name="_template" value="table">
+
+    <section class="section">
+      <div class="section-title">
+        <span class="number">01</span>
+        <h3>Student Information</h3>
+      </div>
+
+      <div class="grid">
+        <div class="field full">
+          <label for="studentName">Full Name <span class="required">*</span></label>
+          <input id="studentName" name="Student Name" type="text"
+                 maxlength="100" autocomplete="name" required
+                 placeholder="Enter student's full name">
+        </div>
+
+        <div class="field">
+          <label for="photo">Student Photo</label>
+          <input id="photo" name="Student Photo" type="file"
+                 accept="image/jpeg,image/png,image/webp">
+          <span class="hint">
+            Optional. Select a JPG, PNG or WEBP image.
+            Keep the file size small.
+          </span>
+        </div>
+
+        <div class="field">
+          <label for="dob">Date of Birth <span class="required">*</span></label>
+          <input id="dob" name="Date of Birth" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="gender">Gender <span class="required">*</span></label>
+          <select id="gender" name="Gender" required>
+            <option value="">Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="bloodGroup">Blood Group</label>
+          <select id="bloodGroup" name="Blood Group">
+            <option value="">Select blood group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>Unknown</option>
+          </select>
+          <span class="hint">
+            Optional. Select Unknown if you do not know your blood group.
+          </span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile Number <span class="required">*</span></label>
+          <input id="phone" name="Mobile Number" type="tel"
+                 inputmode="numeric" pattern="[0-9]{10}"
+                 maxlength="10" required placeholder="10-digit mobile number">
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">WhatsApp Number</label>
+          <input id="whatsapp" name="WhatsApp Number" type="tel"
+                 inputmode="numeric" pattern="[0-9]{10}"
+                 maxlength="10" placeholder="10-digit WhatsApp number">
+          <span class="hint">
+            Optional. Leave blank if it is the same as your mobile number.
+          </span>
+        </div>
+
+        <div class="field full">
+          <label for="email">Email Address</label>
+          <input id="email" name="Student Email" type="email"
+                 maxlength="150" autocomplete="email"
+                 placeholder="name@example.com">
+        </div>
+
+        <div class="field full">
+          <label for="address">Residential Address <span class="required">*</span></label>
+          <textarea id="address" name="Residential Address"
+                    maxlength="500" autocomplete="street-address"
+                    required placeholder="Enter full residential address"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="occupation">Occupation <span class="required">*</span></label>
+          <select id="occupation" name="Occupation" required>
+            <option value="">Select occupation</option>
+            <option>Student</option>
+            <option>Employed</option>
+            <option>Self-employed</option>
+            <option>Unemployed</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field" id="otherOccupationField" hidden>
+          <label for="otherOccupation">Specify Occupation <span class="required">*</span></label>
+          <input id="otherOccupation" name="Other Occupation"
+                 type="text" maxlength="100">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <span class="number">02</span>
+        <h3>Parent / Guardian Details</h3>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="guardian">Parent / Guardian Name</label>
+          <input id="guardian" name="Parent or Guardian Name"
+                 type="text" maxlength="100"
+                 placeholder="Enter parent or guardian name">
+        </div>
+
+        <div class="field">
+          <label for="guardianPhone">Guardian Mobile Number</label>
+          <input id="guardianPhone" name="Guardian Mobile Number"
+                 type="tel" inputmode="numeric"
+                 pattern="[0-9]{10}" maxlength="10"
+                 placeholder="10-digit mobile number">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <span class="number">03</span>
+        <h3>Training Details</h3>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="branch">Branch <span class="required">*</span></label>
+          <select id="branch" name="Branch" required>
+            <option value="">Select branch</option>
+            <option>Nadapuram</option>
+            <option>Purameri</option>
+            <option>Kasthoorikulam</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="session">Training Session <span class="required">*</span></label>
+          <select id="session" name="Training Session" required>
+            <option value="">Select session</option>
+            <option>Evening</option>
+            <option>Night</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="joiningDate">Preferred Joining Date <span class="required">*</span></label>
+          <input id="joiningDate" name="Preferred Joining Date"
+                 type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="experience">Previous Kalari Experience</label>
+          <select id="experience" name="Previous Kalari Experience">
+            <option value="">Select an option</option>
+            <option>No previous experience</option>
+            <option>Beginner training</option>
+            <option>Previous martial arts experience</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <span class="number">04</span>
+        <h3>About Our Institution</h3>
+      </div>
+
+      <div class="grid">
+        <div class="field full">
+          <label for="source">How did you hear about us? <span class="required">*</span></label>
+          <select id="source" name="How They Heard About Us" required>
+            <option value="">Select an option</option>
+            <option>Friends</option>
+            <option>Family / Relatives</option>
+            <option>Social Media</option>
+            <option>Google / Internet</option>
+            <option>Advertisement / Poster</option>
+            <option>School / College</option>
+            <option>Visited the institution</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field full" id="otherSourceField" hidden>
+          <label for="otherSource">Please specify <span class="required">*</span></label>
+          <input id="otherSource" name="Other Referral Source"
+                 type="text" maxlength="150">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <span class="number">05</span>
+        <h3>Medical Information & Training Safety</h3>
+      </div>
+
+      <div class="privacy">
+        <strong>Please share only information relevant to safe training.</strong>
+        Examples include knee pain, leg or ankle pain, breathing difficulty,
+        previous injuries, or movement limitations that the instructor
+        should know about.
+
+        <br><br>
+        This field is optional. Please avoid unnecessary private details.
+        If the student is a minor, a parent or guardian should help decide
+        what information to provide. Medical information entered here will
+        be sent with the application email through the configured form
+        service. This is not a substitute for medical care.
+      </div>
+
+      <div class="field full" style="margin-top:18px">
+        <label for="medicalInfo">Medical Information (Optional)</label>
+        <textarea id="medicalInfo" name="Medical Information"
+                  maxlength="1000"
+                  placeholder="Example: Occasional knee pain during running."></textarea>
+        <span class="hint">
+          You may leave this blank and discuss any concerns privately
+          with the instructor.
+        </span>
+      </div>
+    </section>
+
+    <label class="consent">
+      <input type="checkbox" id="consent" required>
+      <span>
+        I confirm that the information provided is accurate and understand
+        that submitting this application does not guarantee admission.
+        I understand that the photo and any medical information provided
+        will be sent with this application.
+        <span class="required">*</span>
+      </span>
+    </label>
+
+    <button class="submit" type="submit">
+      Submit Admission Application →
+    </button>
+
+    <p class="form-note">
+      Form delivery and photo attachment must be tested before accepting
+      real applications. Avoid submitting unnecessary sensitive details.
+    </p>
+  </form>
+</div>
+</main>
+
+<footer>
+  <strong>AKGS KALARI SANGAM</strong><br>
+  Student Admission & Registration<br>
+  © <span id="year"></span> All rights reserved.
+</footer>
+
+<script>
+const today = new Date();
+const localDate = [
+  today.getFullYear(),
+  String(today.getMonth() + 1).padStart(2, "0"),
+  String(today.getDate()).padStart(2, "0")
+].join("-");
+
+document.getElementById("year").textContent = today.getFullYear();
+document.getElementById("dob").max = localDate;
+document.getElementById("joiningDate").min = localDate;
+
+function setupOther(selectId, wrapperId, inputId) {
+  const select = document.getElementById(selectId);
+  const wrapper = document.getElementById(wrapperId);
+  const input = document.getElementById(inputId);
+
+  function update() {
+    const show = select.value === "Other";
+    wrapper.hidden = !show;
+    input.required = show;
+    if (!show) input.value = "";
+  }
+
+  select.addEventListener("change", update);
+  update();
+}
+
+setupOther("occupation", "otherOccupationField", "otherOccupation");
+setupOther("source", "otherSourceField", "otherSource");
+</script>
+
+</body>
+</html>
