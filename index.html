@@ -17,9 +17,7 @@
   --muted: #6b786f;
   --border: #dfe5dc;
 }
-
 * { box-sizing: border-box; }
-
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -27,7 +25,6 @@ body {
   background: var(--cream);
   line-height: 1.6;
 }
-
 .hero {
   text-align: center;
   color: white;
@@ -37,14 +34,12 @@ body {
     linear-gradient(135deg, #091f18, var(--green-light));
   border-bottom: 5px solid var(--gold);
 }
-
 .logo {
   width: 100px;
   height: 100px;
   object-fit: contain;
   margin-bottom: 12px;
 }
-
 .brand {
   font-size: clamp(25px, 5vw, 40px);
   font-weight: 800;
@@ -52,9 +47,7 @@ body {
   line-height: 1.2;
   margin: 0;
 }
-
 .hero p { color: #e1e9df; margin: 12px 0; }
-
 .tagline {
   color: var(--gold);
   font-size: 12px;
@@ -62,11 +55,47 @@ body {
   letter-spacing: 2px;
 }
 
+.hero-motto {
+  margin: 10px 0 8px;
+  color: #fff4d8;
+  font-size: clamp(14px, 2.2vw, 18px);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero-phones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 10px;
+}
+
+.hero-phone {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 5px 12px;
+  border: 1px solid #d9ad5880;
+  border-radius: 20px;
+  background: #ffffff12;
+}
+
+.hero-phone span {
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+.hero-phone:hover {
+  background: #d9ad5820;
+}
 .container {
   width: min(940px, 94%);
   margin: 32px auto;
 }
-
 .card {
   background: white;
   border: 1px solid var(--border);
@@ -74,28 +103,22 @@ body {
   overflow: hidden;
   box-shadow: 0 14px 45px #193a2b10;
 }
-
 .card-header {
   padding: 28px clamp(18px, 4vw, 40px);
   border-bottom: 1px solid var(--border);
 }
-
 .card-header h2 {
   margin: 0;
   color: var(--green);
   font-size: 27px;
 }
-
 .card-header p {
   color: var(--muted);
   margin: 8px 0 0;
   font-size: 14px;
 }
-
 form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
-
 .section { margin-top: 30px; }
-
 .section-title {
   display: flex;
   align-items: center;
@@ -104,7 +127,6 @@ form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
   margin-bottom: 20px;
   border-bottom: 1px solid #e8e6dc;
 }
-
 .number {
   display: grid;
   place-items: center;
@@ -116,35 +138,28 @@ form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
   color: var(--gold);
   font-weight: 800;
 }
-
 .section-title h3 {
   color: var(--green);
   margin: 0;
   font-size: 17px;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 19px;
 }
-
 .field {
   display: flex;
   flex-direction: column;
   gap: 7px;
   min-width: 0;
 }
-
 .full { grid-column: 1 / -1; }
-
 label {
   font-size: 13px;
   font-weight: 700;
 }
-
 .required { color: #b32626; }
-
 input, select, textarea {
   width: 100%;
   min-height: 48px;
@@ -157,24 +172,19 @@ input, select, textarea {
   font-size: 14px;
   outline: none;
 }
-
 input[type="file"] {
   padding: 10px;
   background: #fbfcf9;
 }
-
 textarea { min-height: 100px; resize: vertical; }
-
 input:focus, select:focus, textarea:focus {
   border-color: var(--green-light);
   box-shadow: 0 0 0 3px #20533e18;
 }
-
 .hint {
   color: var(--muted);
   font-size: 12px;
 }
-
 .privacy {
   padding: 16px;
   border: 1px solid #e9dfc6;
@@ -184,7 +194,6 @@ input:focus, select:focus, textarea:focus {
   color: #655630;
   font-size: 13px;
 }
-
 .consent {
   display: flex;
   align-items: flex-start;
@@ -193,7 +202,6 @@ input:focus, select:focus, textarea:focus {
   font-size: 13px;
   font-weight: 400;
 }
-
 .consent input {
   width: 17px;
   min-height: 17px;
@@ -201,7 +209,6 @@ input:focus, select:focus, textarea:focus {
   accent-color: var(--green);
   flex-shrink: 0;
 }
-
 .submit {
   width: 100%;
   min-height: 54px;
@@ -214,27 +221,21 @@ input:focus, select:focus, textarea:focus {
   font-weight: 800;
   cursor: pointer;
 }
-
 .submit:hover { background: var(--green-light); }
-
 .form-note {
   color: var(--muted);
   text-align: center;
   font-size: 12px;
   margin-top: 13px;
 }
-
 footer {
   padding: 24px 15px 34px;
   text-align: center;
   color: var(--muted);
   font-size: 12px;
 }
-
 footer strong { color: var(--green); }
-
 [hidden] { display: none !important; }
-
 @media (max-width: 620px) {
   .hero { padding: 32px 16px 38px; }
   .logo { width: 82px; height: 82px; }
@@ -253,6 +254,11 @@ footer strong { color: var(--green); }
   <h1 class="brand">AKGS KALARI SANGAM</h1>
   <p>Official Student Admission & Registration</p>
   <div class="tagline">DISCIPLINE · STRENGTH · TRADITION</div>
+  <div class="hero-motto">One vision-one mission-one victory</div>
+  <div class="hero-phones">
+    <a class="hero-phone" href="tel:+919048835012"><span>☎</span>+91 9048 83 5012</a>
+    <a class="hero-phone" href="tel:+919037225012"><span>☎</span>+91 9037 22 5012</a>
+  </div>
 </header>
 
 <main class="container">
