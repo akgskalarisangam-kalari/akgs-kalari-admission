@@ -17,7 +17,11 @@
   --muted: #6b786f;
   --border: #dfe5dc;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -25,6 +29,7 @@ body {
   background: var(--cream);
   line-height: 1.6;
 }
+
 .hero {
   text-align: center;
   color: white;
@@ -34,12 +39,14 @@ body {
     linear-gradient(135deg, #091f18, var(--green-light));
   border-bottom: 5px solid var(--gold);
 }
+
 .logo {
   width: 100px;
   height: 100px;
   object-fit: contain;
   margin-bottom: 12px;
 }
+
 .brand {
   font-size: clamp(25px, 5vw, 40px);
   font-weight: 800;
@@ -47,7 +54,12 @@ body {
   line-height: 1.2;
   margin: 0;
 }
-.hero p { color: #e1e9df; margin: 12px 0; }
+
+.hero p {
+  color: #e1e9df;
+  margin: 12px 0;
+}
+
 .tagline {
   color: var(--gold);
   font-size: 12px;
@@ -55,13 +67,7 @@ body {
   letter-spacing: 2px;
 }
 
-.hero-motto {
-  margin: 10px 0 8px;
-  color: #fff4d8;
-  font-size: clamp(14px, 2.2vw, 18px);
-  font-weight: 800;
-  letter-spacing: 1px;
-}
+/* PHONE NUMBERS */
 
 .hero-phones {
   display: flex;
@@ -69,7 +75,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px 24px;
-  margin-top: 10px;
+  margin-top: 13px;
 }
 
 .hero-phone {
@@ -82,6 +88,7 @@ body {
   border: 1px solid #d9ad5880;
   border-radius: 20px;
   background: #ffffff12;
+  transition: 0.3s;
 }
 
 .hero-phone span {
@@ -92,10 +99,12 @@ body {
 .hero-phone:hover {
   background: #d9ad5820;
 }
+
 .container {
   width: min(940px, 94%);
   margin: 32px auto;
 }
+
 .card {
   background: white;
   border: 1px solid var(--border);
@@ -103,22 +112,32 @@ body {
   overflow: hidden;
   box-shadow: 0 14px 45px #193a2b10;
 }
+
 .card-header {
   padding: 28px clamp(18px, 4vw, 40px);
   border-bottom: 1px solid var(--border);
 }
+
 .card-header h2 {
   margin: 0;
   color: var(--green);
   font-size: 27px;
 }
+
 .card-header p {
   color: var(--muted);
   margin: 8px 0 0;
   font-size: 14px;
 }
-form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
-.section { margin-top: 30px; }
+
+form {
+  padding: 8px clamp(18px, 4vw, 40px) 38px;
+}
+
+.section {
+  margin-top: 30px;
+}
+
 .section-title {
   display: flex;
   align-items: center;
@@ -127,6 +146,7 @@ form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
   margin-bottom: 20px;
   border-bottom: 1px solid #e8e6dc;
 }
+
 .number {
   display: grid;
   place-items: center;
@@ -138,28 +158,39 @@ form { padding: 8px clamp(18px, 4vw, 40px) 38px; }
   color: var(--gold);
   font-weight: 800;
 }
+
 .section-title h3 {
   color: var(--green);
   margin: 0;
   font-size: 17px;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 19px;
 }
+
 .field {
   display: flex;
   flex-direction: column;
   gap: 7px;
   min-width: 0;
 }
-.full { grid-column: 1 / -1; }
+
+.full {
+  grid-column: 1 / -1;
+}
+
 label {
   font-size: 13px;
   font-weight: 700;
 }
-.required { color: #b32626; }
+
+.required {
+  color: #b32626;
+}
+
 input, select, textarea {
   width: 100%;
   min-height: 48px;
@@ -172,19 +203,27 @@ input, select, textarea {
   font-size: 14px;
   outline: none;
 }
+
 input[type="file"] {
   padding: 10px;
   background: #fbfcf9;
 }
-textarea { min-height: 100px; resize: vertical; }
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
 input:focus, select:focus, textarea:focus {
   border-color: var(--green-light);
   box-shadow: 0 0 0 3px #20533e18;
 }
+
 .hint {
   color: var(--muted);
   font-size: 12px;
 }
+
 .privacy {
   padding: 16px;
   border: 1px solid #e9dfc6;
@@ -194,6 +233,7 @@ input:focus, select:focus, textarea:focus {
   color: #655630;
   font-size: 13px;
 }
+
 .consent {
   display: flex;
   align-items: flex-start;
@@ -202,6 +242,7 @@ input:focus, select:focus, textarea:focus {
   font-size: 13px;
   font-weight: 400;
 }
+
 .consent input {
   width: 17px;
   min-height: 17px;
@@ -209,6 +250,7 @@ input:focus, select:focus, textarea:focus {
   accent-color: var(--green);
   flex-shrink: 0;
 }
+
 .submit {
   width: 100%;
   min-height: 54px;
@@ -221,27 +263,55 @@ input:focus, select:focus, textarea:focus {
   font-weight: 800;
   cursor: pointer;
 }
-.submit:hover { background: var(--green-light); }
+
+.submit:hover {
+  background: var(--green-light);
+}
+
 .form-note {
   color: var(--muted);
   text-align: center;
   font-size: 12px;
   margin-top: 13px;
 }
+
 footer {
   padding: 24px 15px 34px;
   text-align: center;
   color: var(--muted);
   font-size: 12px;
 }
-footer strong { color: var(--green); }
-[hidden] { display: none !important; }
+
+footer strong {
+  color: var(--green);
+}
+
+[hidden] {
+  display: none !important;
+}
+
 @media (max-width: 620px) {
-  .hero { padding: 32px 16px 38px; }
-  .logo { width: 82px; height: 82px; }
-  .grid { grid-template-columns: 1fr; gap: 16px; }
-  .full { grid-column: auto; }
-  .container { margin: 20px auto; }
+  .hero {
+    padding: 32px 16px 38px;
+  }
+
+  .logo {
+    width: 82px;
+    height: 82px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .container {
+    margin: 20px auto;
+  }
 }
 </style>
 </head>
@@ -249,18 +319,38 @@ footer strong { color: var(--green); }
 <body>
 
 <header class="hero">
-  <img src="logo.png" class="logo" alt="AKGS Kalari Sangam Logo"
+
+  <img src="logo.png"
+       class="logo"
+       alt="AKGS Kalari Sangam Logo"
        onerror="this.style.display='none'">
+
   <h1 class="brand">AKGS KALARI SANGAM</h1>
+
   <p>Official Student Admission & Registration</p>
-  <div class="tagline">One Vision-One Mission-One Victory</div>
-  <div class="hero-phones">
-    <a class="hero-phone" href="tel:+919048835012"><span>☎</span>+91 9048 83 5012</a>
-    <a class="hero-phone" href="tel:+919037225012"><span>☎</span>+91 9037 22 5012</a>
+
+  <!-- UPDATED TAGLINE -->
+  <div class="tagline">
+    ONE VISION · ONE MISSION · ONE VICTORY
   </div>
+
+  <!-- PHONE NUMBERS -->
+  <div class="hero-phones">
+
+    <a class="hero-phone" href="tel:+919048835012">
+      <span>☎</span> +91 9048 83 5012
+    </a>
+
+    <a class="hero-phone" href="tel:+919037225012">
+      <span>☎</span> +91 9037 22 5012
+    </a>
+
+  </div>
+
 </header>
 
 <main class="container">
+
 <div class="card">
 
   <div class="card-header">
@@ -276,26 +366,42 @@ footer strong { color: var(--green); }
 
     <input type="hidden" name="_subject"
            value="New Admission - AKGS Kalari Sangam">
+
     <input type="hidden" name="_template" value="table">
 
+    <!-- 01 STUDENT INFORMATION -->
+
     <section class="section">
+
       <div class="section-title">
         <span class="number">01</span>
         <h3>Student Information</h3>
       </div>
 
       <div class="grid">
+
         <div class="field full">
-          <label for="studentName">Full Name <span class="required">*</span></label>
-          <input id="studentName" name="Student Name" type="text"
-                 maxlength="100" autocomplete="name" required
+          <label for="studentName">
+            Full Name <span class="required">*</span>
+          </label>
+
+          <input id="studentName"
+                 name="Student Name"
+                 type="text"
+                 maxlength="100"
+                 autocomplete="name"
+                 required
                  placeholder="Enter student's full name">
         </div>
 
         <div class="field">
           <label for="photo">Student Photo</label>
-          <input id="photo" name="Student Photo" type="file"
+
+          <input id="photo"
+                 name="Student Photo"
+                 type="file"
                  accept="image/jpeg,image/png,image/webp">
+
           <span class="hint">
             Optional. Select a JPG, PNG or WEBP image.
             Keep the file size small.
@@ -303,12 +409,21 @@ footer strong { color: var(--green); }
         </div>
 
         <div class="field">
-          <label for="dob">Date of Birth <span class="required">*</span></label>
-          <input id="dob" name="Date of Birth" type="date" required>
+          <label for="dob">
+            Date of Birth <span class="required">*</span>
+          </label>
+
+          <input id="dob"
+                 name="Date of Birth"
+                 type="date"
+                 required>
         </div>
 
         <div class="field">
-          <label for="gender">Gender <span class="required">*</span></label>
+          <label for="gender">
+            Gender <span class="required">*</span>
+          </label>
+
           <select id="gender" name="Gender" required>
             <option value="">Select gender</option>
             <option>Male</option>
@@ -319,6 +434,7 @@ footer strong { color: var(--green); }
 
         <div class="field">
           <label for="bloodGroup">Blood Group</label>
+
           <select id="bloodGroup" name="Blood Group">
             <option value="">Select blood group</option>
             <option>A+</option>
@@ -331,23 +447,38 @@ footer strong { color: var(--green); }
             <option>O-</option>
             <option>Unknown</option>
           </select>
+
           <span class="hint">
             Optional. Select Unknown if you do not know your blood group.
           </span>
         </div>
 
         <div class="field">
-          <label for="phone">Mobile Number <span class="required">*</span></label>
-          <input id="phone" name="Mobile Number" type="tel"
-                 inputmode="numeric" pattern="[0-9]{10}"
-                 maxlength="10" required placeholder="10-digit mobile number">
+          <label for="phone">
+            Mobile Number <span class="required">*</span>
+          </label>
+
+          <input id="phone"
+                 name="Mobile Number"
+                 type="tel"
+                 inputmode="numeric"
+                 pattern="[0-9]{10}"
+                 maxlength="10"
+                 required
+                 placeholder="10-digit mobile number">
         </div>
 
         <div class="field">
           <label for="whatsapp">WhatsApp Number</label>
-          <input id="whatsapp" name="WhatsApp Number" type="tel"
-                 inputmode="numeric" pattern="[0-9]{10}"
-                 maxlength="10" placeholder="10-digit WhatsApp number">
+
+          <input id="whatsapp"
+                 name="WhatsApp Number"
+                 type="tel"
+                 inputmode="numeric"
+                 pattern="[0-9]{10}"
+                 maxlength="10"
+                 placeholder="10-digit WhatsApp number">
+
           <span class="hint">
             Optional. Leave blank if it is the same as your mobile number.
           </span>
@@ -355,20 +486,33 @@ footer strong { color: var(--green); }
 
         <div class="field full">
           <label for="email">Email Address</label>
-          <input id="email" name="Student Email" type="email"
-                 maxlength="150" autocomplete="email"
+
+          <input id="email"
+                 name="Student Email"
+                 type="email"
+                 maxlength="150"
+                 autocomplete="email"
                  placeholder="name@example.com">
         </div>
 
         <div class="field full">
-          <label for="address">Residential Address <span class="required">*</span></label>
-          <textarea id="address" name="Residential Address"
-                    maxlength="500" autocomplete="street-address"
-                    required placeholder="Enter full residential address"></textarea>
+          <label for="address">
+            Residential Address <span class="required">*</span>
+          </label>
+
+          <textarea id="address"
+                    name="Residential Address"
+                    maxlength="500"
+                    autocomplete="street-address"
+                    required
+                    placeholder="Enter full residential address"></textarea>
         </div>
 
         <div class="field">
-          <label for="occupation">Occupation <span class="required">*</span></label>
+          <label for="occupation">
+            Occupation <span class="required">*</span>
+          </label>
+
           <select id="occupation" name="Occupation" required>
             <option value="">Select occupation</option>
             <option>Student</option>
@@ -380,46 +524,71 @@ footer strong { color: var(--green); }
         </div>
 
         <div class="field" id="otherOccupationField" hidden>
-          <label for="otherOccupation">Specify Occupation <span class="required">*</span></label>
-          <input id="otherOccupation" name="Other Occupation"
-                 type="text" maxlength="100">
+          <label for="otherOccupation">
+            Specify Occupation <span class="required">*</span>
+          </label>
+
+          <input id="otherOccupation"
+                 name="Other Occupation"
+                 type="text"
+                 maxlength="100">
         </div>
+
       </div>
     </section>
 
+    <!-- 02 PARENT DETAILS -->
+
     <section class="section">
+
       <div class="section-title">
         <span class="number">02</span>
         <h3>Parent / Guardian Details</h3>
       </div>
 
       <div class="grid">
+
         <div class="field">
           <label for="guardian">Parent / Guardian Name</label>
-          <input id="guardian" name="Parent or Guardian Name"
-                 type="text" maxlength="100"
+
+          <input id="guardian"
+                 name="Parent or Guardian Name"
+                 type="text"
+                 maxlength="100"
                  placeholder="Enter parent or guardian name">
         </div>
 
         <div class="field">
           <label for="guardianPhone">Guardian Mobile Number</label>
-          <input id="guardianPhone" name="Guardian Mobile Number"
-                 type="tel" inputmode="numeric"
-                 pattern="[0-9]{10}" maxlength="10"
+
+          <input id="guardianPhone"
+                 name="Guardian Mobile Number"
+                 type="tel"
+                 inputmode="numeric"
+                 pattern="[0-9]{10}"
+                 maxlength="10"
                  placeholder="10-digit mobile number">
         </div>
+
       </div>
     </section>
 
+    <!-- 03 TRAINING DETAILS -->
+
     <section class="section">
+
       <div class="section-title">
         <span class="number">03</span>
         <h3>Training Details</h3>
       </div>
 
       <div class="grid">
+
         <div class="field">
-          <label for="branch">Branch <span class="required">*</span></label>
+          <label for="branch">
+            Branch <span class="required">*</span>
+          </label>
+
           <select id="branch" name="Branch" required>
             <option value="">Select branch</option>
             <option>Nadapuram</option>
@@ -429,7 +598,10 @@ footer strong { color: var(--green); }
         </div>
 
         <div class="field">
-          <label for="session">Training Session <span class="required">*</span></label>
+          <label for="session">
+            Training Session <span class="required">*</span>
+          </label>
+
           <select id="session" name="Training Session" required>
             <option value="">Select session</option>
             <option>Evening</option>
@@ -438,13 +610,19 @@ footer strong { color: var(--green); }
         </div>
 
         <div class="field">
-          <label for="joiningDate">Preferred Joining Date <span class="required">*</span></label>
-          <input id="joiningDate" name="Preferred Joining Date"
-                 type="date" required>
+          <label for="joiningDate">
+            Preferred Joining Date <span class="required">*</span>
+          </label>
+
+          <input id="joiningDate"
+                 name="Preferred Joining Date"
+                 type="date"
+                 required>
         </div>
 
         <div class="field">
           <label for="experience">Previous Kalari Experience</label>
+
           <select id="experience" name="Previous Kalari Experience">
             <option value="">Select an option</option>
             <option>No previous experience</option>
@@ -452,19 +630,30 @@ footer strong { color: var(--green); }
             <option>Previous martial arts experience</option>
           </select>
         </div>
+
       </div>
     </section>
 
+    <!-- 04 ABOUT INSTITUTION -->
+
     <section class="section">
+
       <div class="section-title">
         <span class="number">04</span>
         <h3>About Our Institution</h3>
       </div>
 
       <div class="grid">
+
         <div class="field full">
-          <label for="source">How did you hear about us? <span class="required">*</span></label>
-          <select id="source" name="How They Heard About Us" required>
+          <label for="source">
+            How did you hear about us? <span class="required">*</span>
+          </label>
+
+          <select id="source"
+                  name="How They Heard About Us"
+                  required>
+
             <option value="">Select an option</option>
             <option>Friends</option>
             <option>Family / Relatives</option>
@@ -474,58 +663,88 @@ footer strong { color: var(--green); }
             <option>School / College</option>
             <option>Visited the institution</option>
             <option>Other</option>
+
           </select>
         </div>
 
         <div class="field full" id="otherSourceField" hidden>
-          <label for="otherSource">Please specify <span class="required">*</span></label>
-          <input id="otherSource" name="Other Referral Source"
-                 type="text" maxlength="150">
+          <label for="otherSource">
+            Please specify <span class="required">*</span>
+          </label>
+
+          <input id="otherSource"
+                 name="Other Referral Source"
+                 type="text"
+                 maxlength="150">
         </div>
+
       </div>
     </section>
 
+    <!-- 05 MEDICAL INFORMATION -->
+
     <section class="section">
+
       <div class="section-title">
         <span class="number">05</span>
         <h3>Medical Information & Training Safety</h3>
       </div>
 
       <div class="privacy">
-        <strong>Please share only information relevant to safe training.</strong>
+
+        <strong>
+          Please share only information relevant to safe training.
+        </strong>
+
         Examples include knee pain, leg or ankle pain, breathing difficulty,
         previous injuries, or movement limitations that the instructor
         should know about.
 
         <br><br>
+
         This field is optional. Please avoid unnecessary private details.
         If the student is a minor, a parent or guardian should help decide
         what information to provide. Medical information entered here will
         be sent with the application email through the configured form
         service. This is not a substitute for medical care.
+
       </div>
 
       <div class="field full" style="margin-top:18px">
-        <label for="medicalInfo">Medical Information (Optional)</label>
-        <textarea id="medicalInfo" name="Medical Information"
+
+        <label for="medicalInfo">
+          Medical Information (Optional)
+        </label>
+
+        <textarea id="medicalInfo"
+                  name="Medical Information"
                   maxlength="1000"
                   placeholder="Example: Occasional knee pain during running."></textarea>
+
         <span class="hint">
           You may leave this blank and discuss any concerns privately
           with the instructor.
         </span>
+
       </div>
+
     </section>
 
+    <!-- CONSENT -->
+
     <label class="consent">
+
       <input type="checkbox" id="consent" required>
+
       <span>
         I confirm that the information provided is accurate and understand
         that submitting this application does not guarantee admission.
         I understand that the photo and any medical information provided
         will be sent with this application.
+
         <span class="required">*</span>
       </span>
+
     </label>
 
     <button class="submit" type="submit">
@@ -536,18 +755,26 @@ footer strong { color: var(--green); }
       Form delivery and photo attachment must be tested before accepting
       real applications. Avoid submitting unnecessary sensitive details.
     </p>
+
   </form>
+
 </div>
 </main>
 
 <footer>
-  <strong>AKGS KALARI SANGAM</strong><br>
-  Student Admission & Registration<br>
+
+  <strong>AKGS KALARI SANGAM</strong>
+  <br>
+  Student Admission & Registration
+  <br>
   © <span id="year"></span> All rights reserved.
+
 </footer>
 
 <script>
+
 const today = new Date();
+
 const localDate = [
   today.getFullYear(),
   String(today.getMonth() + 1).padStart(2, "0"),
@@ -555,27 +782,47 @@ const localDate = [
 ].join("-");
 
 document.getElementById("year").textContent = today.getFullYear();
+
 document.getElementById("dob").max = localDate;
+
 document.getElementById("joiningDate").min = localDate;
 
 function setupOther(selectId, wrapperId, inputId) {
+
   const select = document.getElementById(selectId);
   const wrapper = document.getElementById(wrapperId);
   const input = document.getElementById(inputId);
 
   function update() {
+
     const show = select.value === "Other";
+
     wrapper.hidden = !show;
+
     input.required = show;
-    if (!show) input.value = "";
+
+    if (!show) {
+      input.value = "";
+    }
   }
 
   select.addEventListener("change", update);
+
   update();
 }
 
-setupOther("occupation", "otherOccupationField", "otherOccupation");
-setupOther("source", "otherSourceField", "otherSource");
+setupOther(
+  "occupation",
+  "otherOccupationField",
+  "otherOccupation"
+);
+
+setupOther(
+  "source",
+  "otherSourceField",
+  "otherSource"
+);
+
 </script>
 
 </body>
